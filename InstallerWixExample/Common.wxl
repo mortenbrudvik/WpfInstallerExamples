@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  
   <String Id="Company">Morten Brudvik</String>
+  
   <String Id="ProductName_x86">Wpf Demo (32bit)</String>
 	<String Id="ProductName_x64">Wpf Demo (64bit)</String>
-	<String Id="Language">1033</String>
+	
+  <String Id="Description">Demo examples of creating an installer using WIX and MSIX</String>
+  <String Id="Keywords">WIX,MSIX,Installer</String>
+  <String Id="Comments">Setting up WIX from scratch.</String>
+
+  <String Id="DowngradeErrorMessage">A newer version of Wpf Demo is already installed.</String>
+  
+  <String Id="Language">1033</String>
 </WixLocalization>
