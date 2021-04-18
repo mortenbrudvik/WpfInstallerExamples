@@ -5,44 +5,31 @@ VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDemo", "WpfDemo\WpfDemo.csproj", "{2E000B9C-81C8-4334-8E4F-B7C4598006BB}"
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "InstallerMSIXExample", "InstallerMSIXExample\InstallerMSIXExample.wapproj", "{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}"
-EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "InstallerWixExample", "InstallerWixExample\InstallerWixExample.wixproj", "{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|win-x64 = Debug|win-x64
+		Debug|win-x86 = Debug|win-x86
+		Release|win-x64 = Release|win-x64
+		Release|win-x86 = Release|win-x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|x64.ActiveCfg = Debug|x64
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|x64.Build.0 = Debug|x64
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|x86.ActiveCfg = Debug|x86
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|x86.Build.0 = Debug|x86
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|x64.ActiveCfg = Release|x64
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|x64.Build.0 = Release|x64
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|x86.ActiveCfg = Release|x86
-		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|x86.Build.0 = Release|x86
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Debug|x64.ActiveCfg = Debug|x64
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Debug|x64.Build.0 = Debug|x64
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Debug|x64.Deploy.0 = Debug|x64
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Debug|x86.ActiveCfg = Debug|x86
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Debug|x86.Build.0 = Debug|x86
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Debug|x86.Deploy.0 = Debug|x86
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Release|x64.ActiveCfg = Release|x64
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Release|x64.Build.0 = Release|x64
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Release|x64.Deploy.0 = Release|x64
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Release|x86.ActiveCfg = Release|x86
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Release|x86.Build.0 = Release|x86
-		{0E06E09A-F83B-4B03-8984-D1CC54BDCBD3}.Release|x86.Deploy.0 = Release|x86
-		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Debug|x64.ActiveCfg = Debug|x64
-		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Debug|x86.ActiveCfg = Debug|x86
-		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Debug|x86.Build.0 = Debug|x86
-		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|x64.ActiveCfg = Release|x86
-		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|x86.ActiveCfg = Release|x86
-		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|x86.Build.0 = Release|x86
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|win-x64.ActiveCfg = Debug|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|win-x64.Build.0 = Debug|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|win-x86.ActiveCfg = Debug|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Debug|win-x86.Build.0 = Debug|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|win-x64.ActiveCfg = Release|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|win-x64.Build.0 = Release|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|win-x86.ActiveCfg = Release|Any CPU
+		{2E000B9C-81C8-4334-8E4F-B7C4598006BB}.Release|win-x86.Build.0 = Release|Any CPU
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Debug|win-x64.ActiveCfg = Debug|x64
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Debug|win-x86.ActiveCfg = Debug|x86
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Debug|win-x86.Build.0 = Debug|x86
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|win-x64.ActiveCfg = Release|x86
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|win-x64.Build.0 = Release|x86
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|win-x86.ActiveCfg = Release|x86
+		{A6CA9E35-1A5A-4244-B358-48CB2D13C6AE}.Release|win-x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
