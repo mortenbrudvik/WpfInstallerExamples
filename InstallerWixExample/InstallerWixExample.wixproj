@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>a6ca9e35-1a5a-4244-b358-48cb2d13c6ae</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>InstallerWixExample</OutputName>
+    <OutputName>WpfDemo-$(Configuration)-$(Platform)</OutputName>
     <OutputType>Package</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">

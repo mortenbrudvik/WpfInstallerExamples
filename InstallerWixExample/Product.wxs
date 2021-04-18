@@ -8,9 +8,10 @@
     <?define ProductCode = "{D05B0A45-412A-4785-A10C-5D87B3183687}" ?>
 	<?endif?>
 
-  <!-- Fixed upgrade Id -->
+  <!-- Fixed upgrade Id (Do not change!) -->
   <?define UpgradeCode = "{0B49552E-87A6-4594-B555-D209113C89D3}" ?>
 
+  <!-- NB! When changing version the ProductCode must also change -->
   <?define BuildVersion = 1.2.3.4 ?>
 
   <!-- Define main product -->
