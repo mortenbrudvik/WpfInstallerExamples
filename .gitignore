@@ -37,6 +37,7 @@ bld/
 [Ll]ogs/
 publish_winx86/
 publish_winx64/
+[Ii]nstalls/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
