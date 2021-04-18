@@ -6,18 +6,31 @@
     <!-- Product Components-->
     <ComponentGroup Id="ProductComponents" >
 
-      <ComponentRef Id="TestFile"  />
+      <!-- Shortcut -->
+      <ComponentRef Id="MainAppShortcut" />
 
     </ComponentGroup>
 
     <!-- Installed Files -->
     <DirectoryRef Id="INSTALLFOLDER" FileSource="..\build\publish_win$(var.Platform)">
 
-      <Component Id="TestFile" Guid="{557EF2B2-7CCE-49B9-BD60-F6BD68C61C88}">
-        <File Id="FileTestFile" Name="WpfDemo.exe" KeyPath="yes"/>
+      <!-- Shortcut to main application -->
+      <Component Id="MainAppShortcut" Guid="{0995664D-AE63-4DD6-B894-708A99611370}">
 
+        <Shortcut Id="MainAppShortcut"
+                  Name="!(loc.ProductName_$(var.Platform))"
+                  Target="[INSTALLFOLDER]WpfDemo.exe"
+                  Directory="InstallProgramMenuFolder"
+                  WorkingDirectory="INSTALLFOLDER"
+                  Icon="icon.ico"
+        />
+
+        <!-- Our unique key for this component/shortcut -->
+        <RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\$(loc.ProductNameFolder)" Name="Shortcut" Value="1" Type="integer" KeyPath="yes" />
+        
         <!--Remove start menu items -->
         <RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall" />
+        
       </Component>
 
     </DirectoryRef>

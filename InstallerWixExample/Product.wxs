@@ -59,7 +59,10 @@
 
     <!-- Define components, shortcuts, files etc... for installer -->
     <Feature Id="ProductFeature" Title="WpfDemo" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
+
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="PublishedComponents" />
+
 		</Feature>
 	</Product>
 
