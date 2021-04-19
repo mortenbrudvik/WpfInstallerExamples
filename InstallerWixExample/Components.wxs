@@ -12,7 +12,7 @@
     </ComponentGroup>
 
     <!-- Installed Files -->
-    <DirectoryRef Id="INSTALLFOLDER" FileSource="..\build\publish_win$(var.Platform)">
+    <DirectoryRef Id="INSTALLFOLDER" FileSource="..\build\artifacts\publish_win$(var.Platform)">
 
       <!-- Shortcut to main application -->
       <Component Id="MainAppShortcut" Guid="{0995664D-AE63-4DD6-B894-708A99611370}">

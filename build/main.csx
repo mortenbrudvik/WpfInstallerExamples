@@ -12,7 +12,8 @@ using static System.Console;
 // PREPARATION
 ////////////////////////////////////////////////////////////////////////////////
 
-var publishPath = "publish_winx86";
+var artifactsDir = "artifacts";
+var publishPath = $"{artifactsDir}/publish_winx86";
 
 ////////////////////////////////////////////////////////////////////////////////
 // OPTIONS
@@ -34,9 +35,9 @@ Options options;
 ////////////////////////////////////////////////////////////////////////////////
 
 Target("clean-solution", () => {
-    if( !Directory.Exists(publishPath))
+    if( !Directory.Exists(artifactsDir))
         return;
-    Directory.Delete(publishPath, true);
+    Directory.Delete(artifactsDir, true);
 });
 
 Target("build-solution", DependsOn("clean-solution"), () =>{

@@ -67,27 +67,26 @@
   </Target>
   <Target Name="BeforeBuild">
     <!-- Get assembly version -->
-    <GetAssemblyIdentity AssemblyFiles="..\build\publish_win$(Platform)\WpfDemo.dll">
+    <GetAssemblyIdentity AssemblyFiles="..\build\artifacts\publish_win$(Platform)\WpfDemo.dll">
       <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
     </GetAssemblyIdentity>
     <!-- Define some variables we need -->
     <PropertyGroup>
-      <DefineConstants>BuildVersion=%(AssemblyVersion.Version);BasePath=..\build\publish_win$(Platform)</DefineConstants>
+      <DefineConstants>BuildVersion=%(AssemblyVersion.Version);BasePath=..\build\artifacts\publish_win$(Platform)</DefineConstants>
     </PropertyGroup>
     <!-- Harvest file components from publish folder -->
-    <HeatDirectory OutputFile="ComponentsGenerated.wxs" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="PublishedComponents" SuppressCom="true" Directory="..\build\publish_win$(Platform)" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" />
+    <HeatDirectory OutputFile="ComponentsGenerated.wxs" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="PublishedComponents" SuppressCom="true" Directory="..\build\artifacts\publish_win$(Platform)" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" />
   </Target>
 
   <Target Name="AfterBuild">
     
     <!-- Get assembly version -->
-    <GetAssemblyIdentity AssemblyFiles="..\build\publish_win$(Platform)\WpfDemo.dll">
+    <GetAssemblyIdentity AssemblyFiles="..\build\artifacts\publish_win$(Platform)\WpfDemo.dll">
       <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
     </GetAssemblyIdentity>
 
-    <!-- Rename and move final MSI -->
-    <Exec Command="if not exist Installs mkdir ..\build\Installs" />
-    <Exec Command="move bin\$(Configuration)\$(OutputName).msi ..\build\Installs\WpfDemo-%(AssemblyVersion.Version)-$(Configuration)-$(Platform).msi" />
+    <!-- Move final MSI -->
+    <Exec Command="move bin\$(Configuration)\$(OutputName).msi ..\build\artifacts\WpfDemo-%(AssemblyVersion.Version)-$(Configuration)-$(Platform).msi" />
     
   </Target>
 </Project>
