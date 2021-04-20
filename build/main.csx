@@ -12,6 +12,11 @@ using static System.Console;
 // PREPARATION
 ////////////////////////////////////////////////////////////////////////////////
 
+// Versioning (major.minor.patch.build)
+var assemblyVersion = "1.0.0"; // Internal to the CLR, is not exposed
+var assemblyFileVersion = "1.0.0.0"; // Important for the deployment and windows to differenciate the files
+var assemblyInformationalVersion = "1.0 Alpha"; // Product version - the version that you would use on your website etc.
+
 var artifactsDir = "artifacts";
 var publishDir = $"{artifactsDir}/publish_winx86";
 var msbuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe";
@@ -39,7 +44,7 @@ Target("clean-solution", () => {
 });
 
 Target("build-solution", DependsOn("clean-solution"), () => {
-    Run("dotnet", $@"publish ..\ -c Release -r win-x86 -o {publishDir}");
+    Run("dotnet", $@"publish ..\ -c Release -r win-x86 -o {publishDir} /p:FileVersion={assemblyFileVersion} /p:AssemblyVersion={assemblyVersion} /p:InformationalVersion=""{assemblyInformationalVersion}"" ");
 });
 
 Target("run-unit-tests", DependsOn("build-solution"), () => {
