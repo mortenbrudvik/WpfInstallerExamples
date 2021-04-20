@@ -13,7 +13,9 @@ using static System.Console;
 ////////////////////////////////////////////////////////////////////////////////
 
 var artifactsDir = "artifacts";
-var publishPath = $"{artifactsDir}/publish_winx86";
+var publishDir = $"{artifactsDir}/publish_winx86";
+var msbuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe";
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // OPTIONS
@@ -21,10 +23,7 @@ var publishPath = $"{artifactsDir}/publish_winx86";
 
 public sealed class Options
 {
-    [Option('e', "environment", Required = false, Default = "Development")]
-    public string Environment { get; set; }
-
-    [Option('t', "target", Required = false, Default = "build-solution")]
+    [Option('t', "target", Required = false, Default = "build-msi")]
     public string Target { get; set; }
 }
 
@@ -35,13 +34,20 @@ Options options;
 ////////////////////////////////////////////////////////////////////////////////
 
 Target("clean-solution", () => {
-    if( !Directory.Exists(artifactsDir))
-        return;
-    Directory.Delete(artifactsDir, true);
+    if( Directory.Exists(artifactsDir))
+        Directory.Delete(artifactsDir, recursive: true);
 });
 
-Target("build-solution", DependsOn("clean-solution"), () =>{
-    Run("dotnet", $"publish ../ -c Release -r win-x86 -o {publishPath} /p:EnvironmentName={options.Environment}");
+Target("build-solution", DependsOn("clean-solution"), () => {
+    Run("dotnet", $@"publish ..\ -c Release -r win-x86 -o {publishDir}");
+});
+
+Target("run-unit-tests", DependsOn("build-solution"), () => {
+    Run("dotnet", $"test ..\\ -r artifacts --logger:\"xunit\" --no-build");
+});
+
+Target("build-msi", DependsOn("run-unit-tests"), () =>{
+    Run(msbuildPath, @"..\InstallerWixExample\");
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +57,6 @@ Target("build-solution", DependsOn("clean-solution"), () =>{
 Parser.Default.ParseArguments<Options>(Args).WithParsed<Options>(o =>
 {
     options = o;
-    WriteLine("Environment: " + options.Environment);
     WriteLine("Target: " + options.Target);
 
     RunTargetsAndExit(new List<string>(){options.Target});
